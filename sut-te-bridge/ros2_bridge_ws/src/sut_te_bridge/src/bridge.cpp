@@ -1656,21 +1656,21 @@ namespace bridge {
     // Raw IMUX
     auto rawImuX = sensor_msgs::msg::Imu();
 
-    rawImuX.orientation.x = 0;
-    rawImuX.orientation.y = 0;
-    rawImuX.orientation.z = 0;
-    rawImuX.orientation.w = 0;
+    rawImuX.orientation.x = 0.0;
+    rawImuX.orientation.y = 0.0;
+    rawImuX.orientation.z = 0.0;
+    rawImuX.orientation.w = 0.0;
     for (size_t i = 0; i < 9; i++) {rawImuX.orientation_covariance[i] = -1;}
     
     rawImuX.angular_velocity.x = currentNovatel.raw_imu_var.angular_velocity_var.x;
     rawImuX.angular_velocity.y = currentNovatel.raw_imu_var.angular_velocity_var.y;
     rawImuX.angular_velocity.z = currentNovatel.raw_imu_var.angular_velocity_var.z;
-    for (size_t i = 0; i < 9; i++) {rawImuX.angular_velocity_covariance[i] = 0;}
+    for (size_t i = 0; i < 9; i++) {rawImuX.angular_velocity_covariance[i] = 0.0;}
 
     rawImuX.linear_acceleration.x = currentNovatel.raw_imu_var.linear_acceleration_var.x;
     rawImuX.linear_acceleration.y = currentNovatel.raw_imu_var.linear_acceleration_var.y;
     rawImuX.linear_acceleration.z = currentNovatel.raw_imu_var.linear_acceleration_var.z;
-    for (size_t i = 0; i < 9; i++) {rawImuX.linear_acceleration_covariance[i] = 0;}
+    for (size_t i = 0; i < 9; i++) {rawImuX.linear_acceleration_covariance[i] = 0.0;}
 
     // Header
     rawImuX.header.frame_id = "ego";
